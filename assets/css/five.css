@@ -1,0 +1,228 @@
+
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.navbar-fixed-top .navbar-collapse {
+     max-height: none; 
+}
+
+.navbar-default {
+    border-color: transparent;
+    background-color: #EDD387;
+    
+}
+
+.navbar-default .navbar-collapse {
+    border-color: rgba(255,255,255,1);
+   
+}
+/********* Hamburger *********/
+
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    border-color: #565658;
+    background-color: #565658;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+/********* NAV-BAR *********/
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+}
+
+
+.navbar-default .nav li a,
+.navbar-default .nav li a:focus {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+.navbar-default .nav li a:hover {
+    color: #fff;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+}
+
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover {
+    background: transparent;
+}
+
+.navbar-default .nav li a:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.navbar-default .navbar-nav>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+}
+
+@media (max-width:767px) {
+    .navbar-default .nav li a:hover,
+    .navbar-default .nav li a:focus {
+        outline: 0;
+        border-bottom: none;
+        color: #565658;
+    }
+    .navbar-default .nav li a,
+    .navbar-default .nav li a:focus,
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>a:hover,
+    .navbar-default .nav li a:hover {
+        border-bottom: none;
+        border-top: none;
+    }
+}
+
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background: transparent;
+}
+/******* DROP-DOWN*******/
+.dropdown-menu {
+    background-color: rgba(255,255,255,.3);
+    background-color: rgba(237, 211, 135, .95);
+    font-size: .5em;
+}
+
+.navbar .navbar-default .navbar-fixed-top .navbar-shrink {
+    max-height: 480px;
+}
+
+/********* NAV-BAR shrink *********/
+.navbar-default.navbar-shrink {
+    color: #565658;
+}
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 40px 0;
+        border: 0;
+        background-color: transparent;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-default .navbar-brand {
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-default.navbar-shrink {
+        padding: 0 0;
+        background-color: #EDD387;
+        background-color: rgba(237, 211, 135, .95);
+        box-shadow: 0 12px 20px -15px rgba(0, 0, 0, .5);
+        color: #565658;
+    }
+    .navbar-default.navbar-shrink li a {
+        color: #565658;
+        text-shadow: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-nav .open .dropdown-menu>li>a {
+        padding: 10px 15px 5px 25px;
+        color: #3c3c3c !important;
+    }
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: 0;
+}
+
+/**********/
+.logo {
+    height: 110px;
+    position: absolute;
+    margin-top: -61px;
+}
+
+.info {
+    padding-top: 5px;
+    padding-bottom: 0;
+    font-size: 1.3em;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+
+.nav>li>a {
+   font-size: 20px;
+    padding: 2px 0 5px;
+    margin: 10px 10px 0;   
+    border: none;
+}
+
+.dropdown-menu>li>a {
+    white-space:normal;
+    padding: 3px 25px 5px 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.dropdown-menu>li>a:hover {
+    color: #565658;
+}
+@media(max-width:767px) {
+    .logo {
+        height: 80px;
+        margin-top: -30px;
+    }
+    .nav>li>a {
+        font-size: 16px;
+        padding: 8px 0 5px;
+    }
+    .dropdown-menu>li>a {
+        font-size: 14px;
+        text-shadow: none;
+        color: #fff;  
+    }
+    .navbar-default .nav li a,
+    .navbar-default .nav li a:focus {
+        border-bottom: none;
+        text-shadow: none;
+        color: #565658;
+    }
+}
+
+

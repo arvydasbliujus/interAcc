@@ -1,0 +1,347 @@
+    <!DOCTYPE html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <title>International Accountancy | Kontaktai</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="apple-touch-icon" href="..">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/five.css">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Resource style -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script type="text/javascript">
+
+            var map;
+            var markers = [];
+            var panorama;
+
+            function initMap() {
+              var interAcc = {lat: 51.49181, lng: 0.06417};
+
+              map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: interAcc,
+                mapTypeControl: false,
+                zoomControl: true,
+                scrollwheel: false,
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.TOP_LEFT
+                },
+                scaleControl: true,
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                }
+
+
+              });
+
+              // Adds a marker at the center of the map.
+              addMarker(interAcc);
+            }
+
+            // Adds a marker to the map and push to the array.
+            function addMarker(location) {
+              var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                icon: 'assets/img/logo2.png',
+                title: 'Office'
+              });
+
+              panorama = map.getStreetView();
+                var interAcc = {lat: 51.49179, lng:0.06415}
+              panorama.setPosition(interAcc);
+              panorama.setPov(({
+                heading: 125,
+                pitch: 8,
+                zoom: 0,
+              }));
+                markers.push(marker);
+                addressControl:false;
+            }
+
+            function toggleStreetView() {
+              var toggle = panorama.getVisible();
+              if (toggle == false) {
+                panorama.setVisible(true);
+              } else {
+                panorama.setVisible(false);
+
+              }
+
+            }
+
+            // Sets the map on all markers in the array.
+            function setMapOnAll(map) {
+              for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+              }
+            }
+
+            // Removes the markers from the map, but keeps them in the array.
+            function clearMarkers() {
+              setMapOnAll(null);
+            }
+
+            // Shows any markers currently in the array.
+            function showMarkers() {
+              setMapOnAll(map);
+            }
+
+
+            </script>
+
+    </head>
+
+    <body>
+
+        <!--[if IE]>
+            <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Start coding here -->
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-right hidden-xs info">
+                        <span class="languages visible-sm-inline">LT</span>
+                        <span class="languages visible-sm-inline">EN</span>
+                        <span class="languages visible-sm-inline">RU</span>
+                        <span class="languages visible-md-inline visible-lg-inline">We speak english</span>
+                        <span class="languages visible-md-inline visible-lg-inline">Говорим по-русски</span>
+                        <i class="fa fa-phone"></i> <span class="figures">01279-300-733</span>
+                        <i class="fa fa-envelope" style="margin-left:10px"></i> <a href="mailto:info@interacc.co.uk">info@interacc.co.uk</a>
+                    </div>
+                </div>
+
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="assets/img/logo1.png" class="navbar-brand logo" alt="Logo">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Pradžia</a>
+                        </li>
+                        <li><a href="apie-mus.html">Apie mus</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Paslaugos <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mokesciu-grazinimas.html">Mokesčių grąžinimas</a></li>
+                                <li><a href="motinystes-pasalpa.html">Motinystės pašalpa</a></li>
+                                <li><a href="vaiko-pasalpa.html">Vaiko pašalpa</a></li>
+                                <li><a href="busto-pasalpa.html">Būsto pašalpa</a></li>
+                                <li><a href="mokesciu-deklaravimas.html">Mokesčių deklaravimas</a></li>
+                                <li><a href="darbo-mokesciu-kreditas.html">Darbo mokesčių kreditas</a></li>
+                                <li><a href="kitos.html">Kitos paslaugos</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="kontaktai.html">Kontaktai</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--.navbar-collapse -->
+            </div>
+            <!-- container -->
+        </nav>
+
+        <!-- paslaugos -->
+        <section id="kontaktai">
+            <h2 class="text-center paslaugos animated fadeIn" style="animation-delay:150ms;">Kontaktai</h2>
+
+            <div class="line mb-25"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 animated fadeIn" style="animation-delay:200ms;">
+                        <div class="row kontaktai">
+
+                            <div class="col-md-3">
+                                <h3>Adresas</h3>
+                                <p><i class="fa fa-map-marker"></i> 2A Barnard Close <br> 
+                                <i class="fa fa-map-marker" style="color:transparent"></i> Woolwich</p> 
+                                <p><i class="fa fa-map-marker" style="color:transparent"></i> London <br>
+                                <i class="fa fa-map-marker" style="color:transparent"></i> SE18 6JQ</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <h3>Darbo laikas</h3>
+                                <p><i class="fa fa-briefcase"></i> Pirmadienis - <br>
+                                   <i class="fa fa-briefcase" style="color:transparent"></i> Penktadienis: <span class="figures">10 <sup>00</sup> - 17 <sup>00</sup> </span>
+                                </p>
+                                <p class="closed"> <i class="fa fa-coffee"></i> Šeštadienis - <br>
+                                   <i class="fa fa-coffee" style="color:transparent"></i> Sekmadienis: Nedirbame
+                                </p>
+                            </div> 
+
+                            <div class="col-md-3">
+                                <h3>Telefonas</h3>
+                                <p class="figures"><i class="fa fa-mobile"></i> 07 &nbsp;801 &nbsp;510 &nbsp;979</p>
+                                <p class="figures"><i class="fa fa-phone"></i> 02 &nbsp;034 &nbsp;890 &nbsp;842</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <h3>El. paštas</h3> 
+                                <p><i class="fa fa-envelope"></i><a class="email" href="mailto:info@interacc.co.uk"> info@interacc.co.uk</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <div class="line mb-25"></div>
+                <div class="row text-center kontaktai">
+                    <div class="col-md-4 col-sm-5 how-to-get">
+                        <h3 class="animated fadeIn" style="animation-delay:300ms;">Kaip pas mus atvyki</h3>
+
+                        <i class="fa fa-train fa-2x pull-left"></i>
+                        <p class="text-left">Traukiniu arba DLR, kurio stotelė yra <span class="more"> <em>Woolwich Arsenal</em></span>. <br> Nuo stotelės iki mūsų biuro tik 5min. kelio peščiomis.</p> 
+                        <div class="line"></div>
+
+                        <i class="fa fa-bus fa-2x pull-left"></i> 
+                        <p class="text-left"> Autobusu, kurio stotelė yra <span class="more"> <em>Woolwich Arsenal</em></span>. <br> Nuo stotelės iki mūsų biuro tik 5min. kelio peščiomis.</p> 
+                        <div class="line"></div>
+
+                        <i class="fa fa-car fa-2x pull-left"></i><p class="text-left">Automobiliu: Priešais mūsų biurą yra <span class="more"> <em>Sainsbury's</em></span> parduotuvės automobilių stovėjimo aikštelė, kurioje galite palikti savo automobilį (aikštelė mokama). Taigi, kokį transportą bepasirinktumėte, atvykimui pas mus problemų neiškils.</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 animated fadeIn" style="animation-delay:200ms;">
+                        <h3 class="animated fadeIn" style="animation-delay:300ms;">Žemėlapis</h3>
+                        <div id="floating-panel">
+                            <input onclick="clearMarkers();" type=button value="Slėpti žymeklį">
+                            <input onclick="showMarkers();" type=button value="Rodyti žymeklį">
+                            <input type="button" value="Street View / Žemėlapis" onclick="toggleStreetView();">
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div class="container write" id="parallax-bg">
+                     
+                <div class="row white">
+                    <h2 class="kontaktai text-center" >Susisiekite</h2>  
+                    <div class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-1 kontaktai">
+                    <p>Jeigu neradote Jus dominančios informacijos ar norite paklausti detaliau apie tam tikras mūsų įmonės teikiamas paslaugas, tiesiog susisiekite nurodytais kontaktais. <br> Mes visada laukiame Jūsų skambčių, el. laiškų taip pat ir susitikimų mūsų biure, aptarti būsimus ir dirbamus darbus.
+                    </p>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1 col-sm-5">
+                        <!-- Contact form -->
+                        <form name="sentMessage" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Jūsų vardas *" id="name" required data-validation-required-message="Prašome parašykite savo vardą.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Jūsų el. paštas *" id="email" required data-validation-required-message="Prašome parašykite savo el. paštą">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Jūsų telefono numeris *" id="phone" required data-validation-required-message="Prašome parašykite savo telefono numerį.">
+                                <p class="help-block text-danger"></p>
+                            </div> -->
+
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Jūsų užklausa *" id="message" rows="5" required data-validation-required-message="Prašome parašykite užklausą."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-lg btn-hero text-center btn-block">Siųsti</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="line"></div>
+        <!-- footer -->
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3 wow fadeIn hidden-sm hidden-xs" data-wow-delay="200ms">
+                        <h4>Apie Mus</h4>
+                        <p>Savo klientams visuomet randame pačius optimaliausius sprendimus kuriant verslą, planuojant finansus, įsigyjant būstą ar sprendžiant įvairias su mokesčių sistema... <a class="more" href="apie-mus.html"><strong>Daugiau</strong></a>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 wow fadeIn hidden-sm hidden-xs" data-wow-delay="300ms">
+                        <h4>Paslaugos</h4>
+                        <ul>
+                            <li><a href="mokesciu-grazinimas.html">Mokesčių grąžinimas</a></li>
+                            <li><a href="kitos.html">Kompanijų buhalterija</a></li>
+                            <li><a href="busto-pasalpa.html">Pašalpos</a></li>
+                            <li><a href="kitos.html">Kitos paslaugos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 wow fadeIn" data-wow-delay="400ms">
+                        <h4>Kontaktai</h4>
+                        <address>
+                        <ul>
+                            <li class="address"><i class="fa fa-map-marker"></i> <span class="figures">2A</span> Barnard Close <br>
+                                <i class="fa fa-map-marker" style="color:transparent"></i> Woolwich, London <br>
+                                <i class="fa fa-map-marker" style="color:transparent"></i> SE<span class="figures">18 6</span>JQ <br>
+                            </li>
+                            <li><i class="fa fa-phone"></i> <span class="figures">01279-300-733</span></li>
+                            <li><i class="fa fa-envelope"></i> <a href="mailto:info@interacc.co.uk"> info@interacc.co.uk</a></li>
+                
+                        </ul>
+                        </address>
+                    </div>
+                    <div class="col-sm-3 wow fadeIn hidden-sm hidden-xs" data-wow-delay="500ms">
+                        <h4>Darbo valandos</h4>
+                        <p>Pirmadienis - Penktadienis: <span class="figures">10 - 17</span></p>
+                        <p>Šeštadienis - Sekmadienis: Nedirbame</p>
+                    </div>
+                </div> <!--row-->
+                <div class="row text-center footer2 wow fadeIn" data-wow-delay="200ms">
+                    <div>
+                        © <span class="figures">2016</span> International Accountancy | Visos teisės saugomos<br>
+                        Web Dizainas: <a class="dev-link" href="http://bliujus.uk">Bliujus.uk</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--end of footer-->
+
+        <!-- Coding End -->
+        <a href="#0" class="cd-top hidden-sm hidden-xs">Top</a>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASNYAdNE21XwH9Pno71iaDJPxvThz5lkY&amp;callback=initMap"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
